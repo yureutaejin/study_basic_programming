@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8c12b7dc-df88-4855-afa2-5d82dbe0df90" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data_structure_and_algorithms_java/answer_or_demo/week2/week2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structure_and_algorithms_java/week1/out/production/week1/MyCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/data_structure_and_algorithms_java/week1/out/production/week1/MyCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structure_and_algorithms_java/week1/out/production/week1/Solution.class" beforeDir="false" afterPath="$PROJECT_DIR$/data_structure_and_algorithms_java/week1/out/production/week1/Solution.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_structure_and_algorithms_java/week2/src/ArrayBag.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1yZyfyMAfPXBZwECwPfNyGlr4ZK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c12b7dc-df88-4855-afa2-5d82dbe0df90" name="Changes" comment="" />
+      <created>1632473511909</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1632473511909</updated>
+    </task>
+    <servers />
+  </component>
+</project>
