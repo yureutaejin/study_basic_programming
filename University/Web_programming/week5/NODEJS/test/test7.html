@@ -1,0 +1,31 @@
+<script>
+    let month = Number(prompt("해당 월:"))
+    let day;
+    document.write(`<hr style='border:solid 5px green;'>`)
+    switch (month) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            day = 31;
+            document.write(`<center><h3>${month}월은 ${day}일 까지 있습니다.</h3>`)
+            break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            day = 30;
+            document.write(`<center><h3>${month}월은 ${day}일 까지 있습니다.</h3>`)
+            break;
+        case 2:
+            day = 28;
+            document.write(`<center><h3>${month}월은 ${day}일 까지 있습니다.</h3>`)
+            break;
+        
+    }
+    document.write(`<hr style='border:solid 5px green;'>`)
+
+</script>

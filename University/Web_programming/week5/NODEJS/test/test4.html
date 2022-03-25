@@ -1,0 +1,19 @@
+<script>
+    let date = new Date();
+    let month = date.getMonth()+1;
+
+    let spring = new Array(3, 4, 5, 'spring');
+    let summer = new Array(6, 7, 8, 'summer');
+    let fall = new Array(9, 10, 11, 'fall');
+    let winter = new Array(12, 1, 2, 'winter');
+
+    if (month in spring) {
+        document.write(`<h1>계절:<span style='background-color:orange; color:white';> ${spring[3]}.</span></h1>`);
+    } else if (month in summer) {
+        document.write(`<h1>계절:<span style='background-color:orange; color:white';> ${summer[3]}.</span></h1>`);
+    } else if (month in fall) {
+        document.write(`<h1>계절:<span style='background-color:orange; color:white';> ${fall[3]}.</span></h1>`);
+    } else if (month in winter) {
+        document.write(`<h1>계절:<span style='background-color:orange; color:white';> ${winter[3]}.</span></h1>`);
+    }
+</script>

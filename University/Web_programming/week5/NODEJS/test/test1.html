@@ -1,0 +1,13 @@
+<script>
+
+    document.write(`<hr style='border:solid 2px gold; width:70%'>`); // solid: 단선_______, px: 픽셀 단위 두껍게, dotted: ......, dashed:------, double:=======, width: 가로선의 사이즈를 제어
+
+
+    let age = Number(prompt("나이: "))
+
+    if ((10<=age)&(age<=19)) {
+        document.write(`<h1><span style='background-color:blue; color:white';> 회원 가입 대상자입니다.</span></h1>`);
+    } else {
+        document.write(`<h1><span style='background-color:red; color:white';> 자격 불가입니다. </span></h1>`);
+    }
+</script>

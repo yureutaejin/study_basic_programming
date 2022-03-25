@@ -6,3 +6,5 @@ console.log(country)
 console.log(`52 + 273 = ${52+273}`)
 console.log(`seoul korea`)
 
+// comparison operater
+console.log(1>2)

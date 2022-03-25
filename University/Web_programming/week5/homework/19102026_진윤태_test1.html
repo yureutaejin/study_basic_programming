@@ -1,0 +1,21 @@
+<script>
+    let date = new Date();
+    let month = date.getMonth()+1;
+    month = date.getMonth()+1;
+    let spring = new Array(3, 4, 5, 'Spring', '봄');
+    let summer = new Array(6, 7, 8, 'Summer', '여름');
+    let fall = new Array(9, 10, 11, 'Fall', '가을');
+    let winter = new Array(12, 1, 2, 'Winter', '겨울');
+    document.write(`<hr style='border:solid 5px gold;'>`)
+    document.write(`<center><h1><span style='color:blue';>지금은 ${month}월 입니다.</span></h1>`);
+    if (month in spring) {
+        document.write(`<center><h1>계절은 <span style='background-color:green; color:white; font-family:궁서체;'>${spring[4]}(${spring[3]})</span>입니다.</h1>`);
+    } else if (month in summer) {
+        document.write(`<center><h1>계절은 <span style='background-color:green; color:white;'>${summer[4]}(${summer[3]})</span>입니다.</h1>`);
+    } else if (month in fall) {
+        document.write(`<center><h1>계절은 <span style='background-color:green; color:white; font='font-family':"궁서체">${fall[4]}(${fall[3]})</span>입니다.</h1>`);
+    } else if (month in winter) {
+        document.write(`<center><h1>계절은 <span style='background-color:green; color:white;'>${winter[4]}(${winter[3]})</span>입니다.</h1>`);
+    }
+
+</script>
