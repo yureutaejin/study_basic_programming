@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function setTitle(e) {
+                document.getElementsByClassName("header")[0].innerHTML = e.target.value;
+            }
+            function addObj() {
+                var obj = document.createElement("h1");
+                obj.innerHTML = "GoodBye";
+                document.body.appendChild(obj);
+                console.log("H1 element added")
+            };
+
+            /*
+            window.onload=function(){
+                document.getElementsByClassName("a")[0].onclick = addObj;
+            }
+            */
+        </script>
+    </head>
+    <body>
+        <div id="intro">
+            <input name="title" type="text" /><br />
+            <a onclick="addObj()">My link</a>
+            <h1 class="header">My header</h1>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+
+        <script>
+            document.getElementsByName('title')[0].addEventListener('keyup', setTitle);
+            document.getElementsByTagName("a")[0].onclick=addObj;
+        </script>
+    </body>
+</html>

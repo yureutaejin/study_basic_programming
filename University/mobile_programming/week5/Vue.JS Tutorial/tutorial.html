@@ -1,0 +1,149 @@
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        #demo {
+            font-family: 'Helvetica', Arial, sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: #f66;
+        }
+
+        li {
+            line-height: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .author,
+        .date {
+            font-weight: bold;
+        }
+
+        .happy {
+            color: hotpink;
+        }
+
+        .unhappy {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        <h1 v-bind:title="msg" :class="theme" :style="{fontSize:fontSize, textDecoration:tt}">Latest Vue.js Commits{{msg}} </h1>
+        <input type="text" v-model="msg">
+        <!-- <h2> We have {{ branchCount() }} {{ computedBranchCount }} branches </h2> -->
+        <template v-for="branch in branches">
+            <!-- 리스트 렌더링 -->
+            <input type="radio" :id="branch" :value="branch" name="branch" v-model="currentBranch">
+            <!-- v-model: 양방향 바인딩-->
+            <label :for="branch">{{ branch }}</label> <!-- 문자열 보간법 -->
+        </template>
+        <!-- <button> Clear Commits </button> -->
+        <p>vuejs/vue@{{ currentBranch }}</p> <!-- 문자열 보간법 -->
+        <ul>
+            <li v-for="record in commits">
+                <!-- 리스트 렌더링 -->
+                <a :href="record.html_url" target="_blank" class="commit">{{ record.sha.slice(0, 7) }}</a>
+                - <span class="message">{{ record.commit.message | truncate }}</span><br>
+                by <span class="author"><a :href="record.author.html_url" target="_blank">{{ record.commit.author.name
+                        }}</a></span>
+                at <span class="date">{{ record.commit.author.date | formatDate }}</span>
+            </li>
+        </ul>
+        <!-- <bt-comp></bt-comp> -->
+    </div>
+</body>
+<script>
+    var apiURL = 'https://api.github.com/repos/vuejs/vue/commits?per_page=3&sha='
+    // var buttonComponent = { // 컴포넌트 등록을 위한 선언
+    //     data: function () {
+    //         return {
+    //             count: 0
+    //         }
+    //     },
+    //     watch:{
+    //         count: function(){
+    //             this.$emit('msg',this.count);
+    //         }
+    //     },
+    //     props: ['branch'], // 상위 컴포넌트로부터 받을 데이터 (branch라는 이름으로 전달된다)
+
+    //     template: '<div><button @click="count++"><p> You clicked me {{ count }} times.</p></button><p> Current branch is {{ branch }}.</p> </div>'
+    // }
+    /**
+     * Actual demo
+     */
+
+    var demo = new Vue({
+
+        el: '#demo', // demo 영역에 대한 Vue instance
+        // components:{ // 컴포넌트 등록
+        //     'bt-comp':buttonComponent
+        // },
+        data: { // data 영역. 일종의 property
+            branches: ['master', 'dev'],
+            currentBranch: 'master',
+            commits: [],
+            theme: 'happy',
+            fontSize: 30,
+            msg: " Mobile programming!",
+            tt: "underline"
+        },
+
+        created: function () { // lifecycle hook 중 created()
+            this.fetchData()            
+        },
+
+        watch: { // watcher: 특정 property의 변경 감시자
+            currentBranch: 'fetchData' // currentBranch가 변경되면 fetchData()가 수행됨
+        },
+
+        filters: { // filter
+            truncate: function (v) {
+                var newline = v.indexOf('\n')
+                return newline > 0 ? v.slice(0, newline) : v
+            },
+            formatDate: function (v) {
+                return v.replace(/T|Z/g, ' ')
+            }
+        },
+
+        methods: { // method
+            fetchData: function () { // AJAX 콜을 통한 비동기 데이터 획득
+                var xhr = new XMLHttpRequest()
+                var self = this
+                xhr.open('GET', apiURL + self.currentBranch)
+                xhr.onload = function () {
+                    if (xhr.status != 404) { // 에러가 없다면 실행 결과를 commits 배열에 채워 넣음
+                        self.commits = JSON.parse(xhr.responseText)
+                        console.log(self.commits[0].html_url)
+                    } else { self.commits = [] } // 에러가 있다면, commits 배열을 비움
+                }
+                //xhr.send()
+            },
+            // clearCommits: function(){
+            //     this.commits=[];
+            // },
+            // branchCount: function(){
+            //     console.log("method called");
+            //     return this.branches.length;
+            // }
+        },
+        // computed: {
+        //     computedBranchCount(){
+        //         console.log("computed called");
+        //         return this.branches.length;
+        //     }
+        // }
+    })
+
+    
+
+</script>
+
+</html>
